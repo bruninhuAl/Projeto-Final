@@ -1,0 +1,39 @@
+body {
+  background: #CCC;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.grid-item {
+  background-color: #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+.produto-destaque {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.titulo {
+  text-align: center;
+}
+
+.grid-container2 {
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+}
+
+.grid-item2 {
+  background-color: #eaeaea;
+  padding: 20px;
+  text-align: center;
+}
