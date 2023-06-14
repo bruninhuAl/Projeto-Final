@@ -7,16 +7,16 @@ class MeuErro extends Error {
 }
 
 class Produto {
-    constructor(nome, dataCadastro, descricao, preco){
-        this.nome = nome;
-        this.dataCadastro = dataCadastro;
-        this.descricao = descricao;
-        this.preco = preco
+  constructor(nome, dataCadastro, descricao, preco){
+    this.nome = nome;
+    this.dataCadastro = dataCadastro;
+    this.descricao = descricao;
+    this.preco = preco
     }
 
-    metodos(){
-        return this.nome + this.dataCadastro + this.descricao + this.preco
-    }
+   metodos(){
+    return this.nome + this.dataCadastro + this.descricao + this.preco
+   }
 }
 
 const produto = new Produto("Xbox", "06-05-21", "Console", "R$2120,00");
@@ -93,8 +93,8 @@ class ProdutosListaDestaque extends Produto{
        <img src="${this.imagemDestaque3}" style="height: 250px">
        <p>${this.descricao3}</p>
        <p>${this.preco3}</p>
+       </div>
       </div>
-     </div>
       
         `
         //return this.titulo + this.imagemDestaque + this.descricao + this.preco;
@@ -109,24 +109,28 @@ class ProdutosListaDestaque extends Produto{
     }
 
     atributos() {
-        if (this.titulo1 != "", this.imagemDestaque1 != "", this.descricao1 != "", this.preco1 != "", this.titulo2 != "", this.imagemDestaque2 != "", this.descricao2 != "", this.preco2 != "", this.titulo3 != "", this.imagemDestaque3 != "", this.descricao3 != "", this.preco3 != "",){
-          return {
-            titulo1: this.titulo1,
-            imagemDestaque1: this.imagemDestaque1,
-            descricao1: this.descricao1,
-            preco1: this.preco1,
-            titulo2: this.titulo2,
-            imagemDestaque2: this.imagemDestaque2,
-            descricao2: this.descricao2,
-            preco2: this.preco2,
-            titulo3: this.titulo3,
-            imagemDestaque3: this.imagemDestaque3,
-            descricao3: this.descricao3,
-            preco3: this.preco3
-          };
-        } else {
-          throw new MeuErro("Um problema inesperado aconteceu!")
-        }
+      if (this.nome != "", this.dataCadastro != "", this.descricao != "", this.preco != "", this.imagemDestaque != "", this.titulo1 != "", this.imagemDestaque1 != "", this.descricao1 != "", this.preco1 != "", this.titulo2 != "", this.imagemDestaque2 != "", this.descricao2 != "", this.preco2 != "", this.titulo3 != "", this.imagemDestaque3 != "", this.descricao3 != "", this.preco3 != "",){
+        return {
+          nome: this.nome,
+          dataCadastro: this.dataCadastro,
+          descricao: this.descricao,
+          preco: this.preco,
+          imagemDestaque: this.imagemDestaque,
+          titulo1: this.titulo1,
+          imagemDestaque1: this.imagemDestaque1,
+          descricao1: this.descricao1,
+          preco1: this.preco1,
+          titulo2: this.titulo2,
+          imagemDestaque2: this.imagemDestaque2,
+          descricao2: this.descricao2,
+          preco2: this.preco2,
+          titulo3: this.titulo3,
+          imagemDestaque3: this.imagemDestaque3,
+          descricao3: this.descricao3,
+          preco3: this.preco3
+        };
+      } else {
+        throw new MeuErro("Um problema inesperado aconteceu!")
       }
     }
 }
