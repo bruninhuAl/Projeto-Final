@@ -1,9 +1,9 @@
 // divListaProduto.insertAdjacentHTML('afterbegin', '');
 class MeuErro extends Error {
-    constructor(message){
-      super(message);
-      this.name = "Erro!";
-    }
+  constructor(message){
+    super(message);
+    this.name = "Erro!";
+  }
 }
 
 class Produto {
@@ -73,43 +73,16 @@ class ProdutosListaDestaque extends Produto{
         this.preco3 = preco3;
     }
 
-    mostrarLista(){
-        return `
-        <div class="grid-container">
-      <div class="grid-item">
-     <h3>${this.titulo1}</h3>
-     <img src="${this.imagemDestaque1}" style="height: 250px">
-     <p>${this.descricao1}</p>
-     <p>${this.preco1}</p>
-     </div>
-     <div class="grid-item">
-     <h3>${this.titulo2}</h3>
-     <img src="${this.imagemDestaque2}" style="height: 250px">
-     <p>${this.descricao2}</p>
-     <p>${this.preco2}</p>
-     </div>
-       <div class="grid-item">
-       <h3>${this.titulo3}</h3>
-       <img src="${this.imagemDestaque3}" style="height: 250px">
-       <p>${this.descricao3}</p>
-       <p>${this.preco3}</p>
-       </div>
-      </div>
-      
-        `
-        //return this.titulo + this.imagemDestaque + this.descricao + this.preco;
-    }
-
     mostrarAtributos(){
-        try {
-          return this.atributos();  
-        } catch (error) {
-          console.log(error) 
-        }
-    }
-
+      try {
+        return this.atributos();  
+      } catch (error) {
+        console.log(error) 
+      }
+    } 
+  
     atributos() {
-      if (this.nome != "", this.dataCadastro != "", this.descricao != "", this.preco != "", this.imagemDestaque != "", this.titulo1 != "", this.imagemDestaque1 != "", this.descricao1 != "", this.preco1 != "", this.titulo2 != "", this.imagemDestaque2 != "", this.descricao2 != "", this.preco2 != "", this.titulo3 != "", this.imagemDestaque3 != "", this.descricao3 != "", this.preco3 != "",){
+      if (this.nome != "" && this.dataCadastro != "" && this.descricao != "" && this.preco != "" && this.imagemDestaque != "" && this.titulo1 != "" && this.imagemDestaque1 != "" && this.descricao1 != "" && this.preco1 != "" && this.titulo2 != "" && this.imagemDestaque2 != "" && this.descricao2 != "" && this.preco2 != "" && this.titulo3 != "" && this.imagemDestaque3 != "" && this.descricao3 != "" && this.preco3 != ""){
         return {
           nome: this.nome,
           dataCadastro: this.dataCadastro,
@@ -133,10 +106,44 @@ class ProdutosListaDestaque extends Produto{
         throw new MeuErro("Um problema inesperado aconteceu!")
       }
     }
+
+
+
+
+
+
+
+    mostrarLista(){
+      return `
+      <div class="grid-container">
+      <div class="grid-item">
+     <h3>${this.titulo1}</h3>
+     <img src="${this.imagemDestaque1}" style="height: 250px">
+     <p>${this.descricao1}</p>
+     <p>${this.preco1}</p>
+     </div>
+     <div class="grid-item">
+     <h3>${this.titulo2}</h3>
+     <img src="${this.imagemDestaque2}" style="height: 250px">
+     <p>${this.descricao2}</p>
+     <p>${this.preco2}</p>
+     </div>
+       <div class="grid-item">
+       <h3>${this.titulo3}</h3>
+       <img src="${this.imagemDestaque3}" style="height: 250px">
+       <p>${this.descricao3}</p>
+       <p>${this.preco3}</p>
+       </div>
+      </div>
+      `
+        //return this.titulo + this.imagemDestaque + this.descricao + this.preco;
+    }
 }
 
 const produtos_Lista = new ProdutosListaDestaque("Xbox", "06-05-21", "Console", "R$2120,00", "https://assets.xboxservices.com/assets/c7/46/c7465321-acbb-4e4f-9376-cd6005165d0e.png?n=GLP-2020_Feature-1400_XSX_935x1166_03.png", "Xbox Series X", "https://assets.xboxservices.com/assets/c7/46/c7465321-acbb-4e4f-9376-cd6005165d0e.png?n=GLP-2020_Feature-1400_XSX_935x1166_03.png", "Video game", "R$ 4620,00", "Playstation 5", "https://gmedia.playstation.com/is/image/SIEPDC/ps5-product-thumbnail-01-en-14sep21?$facebook$", "Video game", "R$ 4400,00", "Nintendo Switch", "https://www.tradeinn.com/f/13734/137343676_2/nintendo-switch.jpg", "Video game", "R$ 2079,00");
-const atributos = meuAnimal.mostrarAtributos();
+
+const atributos = produtos_Lista.mostrarAtributos();
+
 
 const lista_De_Produtos = document.getElementById("lista-produtos");
 lista_De_Produtos.insertAdjacentHTML('afterbegin', produtos_Lista.mostrarLista());
